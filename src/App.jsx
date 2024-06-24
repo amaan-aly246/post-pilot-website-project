@@ -1,3 +1,4 @@
+import Header from "./components/Header"
 import Navigation from "./components/Navigation"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <Navigation/>
+      <Header/>
     </>
   )
 }
