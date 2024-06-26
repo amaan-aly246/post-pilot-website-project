@@ -1,4 +1,6 @@
+import Footer from "./components/Footer"
 import Header from "./components/Header"
+import Hero from "./components/Hero"
 import Navigation from "./components/Navigation"
 
 function App() {
@@ -8,6 +10,8 @@ function App() {
     <>
       <Navigation/>
       <Header/>
+      <Hero/>
+      <Footer/>
     </>
   )
 }
