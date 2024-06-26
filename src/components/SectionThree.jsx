@@ -1,107 +1,159 @@
-import React from "react";
-
+import { motion } from "framer-motion"
+import React from "react"
+import { btnVariant } from "../animation/animation"
+import useInViewHook from "../hooks/useInViewHook"
 function SectionThree() {
-  return    <section className="bg-[#fdf3ea] z-10">
-  {/* heading area  */}
-  <h1 className="font-semibold text-5xl text-center line-clamp-3 p-16 mx-[8rem]">
-    PostPilot makes it a{" "}
-    <span className="font-myFont-Playwrite text-primaryColor-1">
-      cinch
-    </span>{" "}
-    to send personalized, profit-generating postcards.
-  </h1>
-  <div className="px-10">
-    {/* first  */}
+  const [div1, inView1] = useInViewHook()
+  const [div2, inView2] = useInViewHook()
+  const [div3, inView3] = useInViewHook()
+  const variant = {
+    hiddenLeft: {
+      x: "-20%",
+    },
+    visibleLeft: {
+      x: "0%",
+      transition: {
+        duration: 1,
+      },
+    },
+    hiddenRight: {
+      x: "70%",
+    },
 
-    <div className=" ml-10">
-      <h1 className="text-secondaryColor-7 text-4xl font-semibold py-8">
-        <p className="font-myFont-Playwrite text-primaryColor-1 ">
-          Powerful
-        </p>
-        <p>acquisition</p>
-        <p>&retention</p>
+    visibleRight: {
+      x: "0%",
+      transition: {
+        duration: 1,
+      },
+    },
+  }
+  return (
+    <section className="bg-[#fdf3ea] z-10">
+      {/* heading area  */}
+      <h1 className="font-semibold text-5xl text-center line-clamp-3 p-16 mx-[8rem]">
+        PostPilot makes it a{" "}
+        <span className="font-myFont-Playwrite text-primaryColor-1">cinch</span>{" "}
+        to send personalized, profit-generating postcards.
       </h1>
-      <div className="text-xl pb-10">
-        <p>Send one-off or triggered campaigns to customers </p>
-        <p>& prospects. Target email leads with MailMatch™.</p>
-      </div>
-      <div className="rounded-2xl border-[1px] border-secondaryColor-2 w-[400px] relative p-8 ">
-        <i className="fa-solid fa-quote-left text-orange absolute -top-4 left-5 text-2xl"></i>
-        <p className="text-left text-xl">
-          It’s like Klaviyo for direct mail. The results are absolutely
-          insane.
-        </p>
-        <p className="text-left font-thin">Ash Melwani, CMO</p>
-      </div>
-    </div>
-    {/* second */}
-    <div className="  inline-block w-[500px] relative -right-[46rem]">
-      <h1 className="text-secondaryColor-7 text-4xl font-semibold py-8 ">
-        <p>
-          <span className="font-myFont-Playwrite text-primaryColor-1 ">
-            Fight back{" "}
-          </span>
-          against iOS
-        </p>
-        <p>updates, jacked-up </p>
-        <p>CPCs & spam folders</p>
-      </h1>
-      <div className="text-xl pb-10  w-[30rem]">
-        <p>
-          Deliver your message to all of your customers — for less than
-          the cost of a click.{" "}
-        </p>
-      </div>
-      <div className="rounded-2xl border-[1px] border-secondaryColor-2 w-[450px] relative p-8 ">
-        <i className="fa-solid fa-quote-left text-orange absolute -top-4 left-5 text-2xl"></i>
-        <p className="text-left text-xl">
-          PostPilot is our new weapon against sinking email engagement
-          and rising PPC costs. The results and ROI have been
-          outstanding. It’s now one of our core marketing channels to
-          increase acquisition & LTV.
-        </p>
-        <p className="text-left font-thin">Ash Melwani, CMO</p>
-      </div>
-    </div>
-    {/* third  */}
-    <div className=" ml-10">
-      <h1 className="text-secondaryColor-7 text-4xl font-semibold py-8">
-        Done for
-        <span className="font-myFont-Playwrite text-primaryColor-1 ">
-          {" "}
-          you
-        </span>
-      </h1>
+      <div className="px-10">
+        {/* first  */}
 
-      <p className="text-xl pb-10 w-[30rem]">
-        From design & strategy to stamp-licking, our ecom experts help
-        you every step of the way.{" "}
-      </p>
+        <motion.div
+          className=" ml-10"
+          ref={div1}
+          variants={variant}
+          initial="hiddenLeft"
+          animate={inView1 ? "visibleLeft" : "hiddenLeft"}>
+          <h1 className="text-secondaryColor-7 text-4xl font-semibold py-8">
+            <p className="font-myFont-Playwrite text-primaryColor-1 ">
+              Powerful
+            </p>
+            <p>
+              acquisition <br />
+              &retention
+            </p>
+          </h1>
+          <div className="text-xl pb-10">
+            <p>
+              Send one-off or triggered campaigns to customers <br />&
+              prospects. Target email leads with MailMatch™.
+            </p>
+          </div>
+          <div className="rounded-2xl border-[1px] border-secondaryColor-2 w-[400px] relative p-8 ">
+            <i className="fa-solid fa-quote-left text-orange absolute -top-4 left-5 text-2xl"></i>
+            <p className="text-left text-xl">
+              It’s like Klaviyo for direct mail. The results are absolutely
+              insane.
+            </p>
+            <p className="text-left font-thin">Ash Melwani, CMO</p>
+          </div>
+        </motion.div>
+        {/* second */}
+        <motion.div
+          className="  inline-block w-[500px] relative -right-[46rem]"
+          ref={div2}
+          variants={variant}
+          initial="hiddenRight"
+          animate={inView2 ? "visibleRight" : "hiddenRight"}
+          >
+          <h1 className="text-secondaryColor-7 text-4xl font-semibold py-6 ">
+            <p>
+              <span className="font-myFont-Playwrite text-primaryColor-1 ">
+                Fight back{" "}
+              </span>
+              against iOS
+              <br />
+              updates, jacked-up
+              <br />
+              CPCs & spam folders
+            </p>
+          </h1>
+          <div className="text-xl pb-6  w-[30rem]">
+            <p>
+              Deliver your message to all of your customers — for less than the
+              cost of a click.{" "}
+            </p>
+          </div>
+          <div className="rounded-2xl border-[1px] border-secondaryColor-2 w-[450px] relative p-8 ">
+            <i className="fa-solid fa-quote-left text-orange absolute -top-4 left-5 text-2xl"></i>
+            <p className="text-left text-xl">
+              PostPilot is our new weapon against sinking email engagement and
+              rising PPC costs. The results and ROI have been outstanding. It’s
+              now one of our core marketing channels to increase acquisition &
+              LTV.
+            </p>
+            <p className="text-left font-thin">Ash Melwani, CMO</p>
+          </div>
+        </motion.div>
+        {/* third  */}
+        <motion.div
+          className=" ml-10"
+          ref={div3}
+          variants={variant}
+          initial="hiddenLeft"
+          animate={inView3 ? "visibleLeft" : "hiddenLeft"}>
+          <h1 className="text-secondaryColor-7 text-4xl font-semibold py-8">
+            Done for
+            <span className="font-myFont-Playwrite text-primaryColor-1 ">
+              {" "}
+              you
+            </span>
+          </h1>
 
-      <div className="rounded-2xl border-[1px] border-secondaryColor-2 w-[400px] relative p-8 ">
-        <i className="fa-solid fa-quote-left text-orange absolute -top-4 left-5 text-2xl"></i>
-        <p className="text-left text-xl">
-          The team is so knowledgeable and beyond helpful. I’m blown
-          away by their communication, detail, and attentiveness and
-          always feel like they have our best interest in mind.
-          Definitely worth a try.
-        </p>
-        <p className="text-left font-thin">
-          Holly Davies, Marketing Director
-        </p>
+          <p className="text-xl pb-10 w-[30rem]">
+            From design & strategy to stamp-licking, our ecom experts help you
+            every step of the way.{" "}
+          </p>
+
+          <div className="rounded-2xl border-[1px] border-secondaryColor-2 w-[400px] relative p-8 ">
+            <i className="fa-solid fa-quote-left text-orange absolute -top-4 left-5 text-2xl"></i>
+            <p className="text-left text-xl">
+              The team is so knowledgeable and beyond helpful. I’m blown away by
+              their communication, detail, and attentiveness and always feel
+              like they have our best interest in mind. Definitely worth a try.
+            </p>
+            <p className="text-left font-thin">
+              Holly Davies, Marketing Director
+            </p>
+          </div>
+        </motion.div>
+        {/* button */}
+        <div className="ml-10  mt-8 relative font-semibold pb-10">
+          <button className=" bg-black z-10 border-[2px] p-1 px-4 border-black rounded-md ">
+            TRY IT RISK-FREE
+          </button>
+          <motion.button
+            className=" text-white z-30 border-[2px] p-1 px-4 border-black rounded-md  bg-orange absolute -left-1 -top-1"
+            variants={btnVariant}
+            initial={null}
+            whileTap="tap"
+            whileHover="hover">
+            TRY IT RISK-FREE
+          </motion.button>
+        </div>
       </div>
-    </div>
-    {/* button */}
-    <div className="ml-10  mt-8 relative font-semibold pb-10">
-      <button className=" bg-black z-10 border-[2px] p-1 px-4 border-black rounded-md ">
-        TRY IT RISK-FREE
-      </button>
-      <button className=" text-white z-30 border-[2px] p-1 px-4 border-black rounded-md  bg-orange absolute -left-1 -top-1">
-        TRY IT RISK-FREE
-      </button>
-    </div>
-  </div>
-</section>;
+    </section>
+  )
 }
 
-export default SectionThree;
+export default SectionThree
