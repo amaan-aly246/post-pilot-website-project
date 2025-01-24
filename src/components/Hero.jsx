@@ -19,7 +19,7 @@ function Hero() {
 
         <SectionFive />
 
-        <SectionSix />
+        {/* <SectionSix /> */}
       </main>
     </>
   )

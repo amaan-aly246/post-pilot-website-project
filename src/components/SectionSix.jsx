@@ -16,7 +16,7 @@ function SectionSix() {
   }
   return (
     <section className="bg-secondaryColor-6 py-16">
-      <h2 className="text-5xl font-semibold text-center">
+      <h2 className="text-3xl lg:text-5xl font-semibold text-center">
         PostPilot is🔥for{" "}
         <span className="font-myFont-Playwrite text-primaryColor-1">DTC</span>
       </h2>
@@ -24,7 +24,7 @@ function SectionSix() {
       <div className="pt-8 flex gap-4  overflow-hidden " ref={ref}>
         {testimonials.map(({ img, name, username, text }) => (
           <motion.div
-            className="basis-1/4 shrink-0 h-[200px] rounded-md border-[2px] border-secondaryColor-2 p-6 "
+            className="lg:basis-1/4   h-[200px] rounded-md border-[2px] border-secondaryColor-2 p-6 "
             variants={variant}
             initial={null}
             animate={inView ? "slide" : null}>
@@ -43,7 +43,7 @@ function SectionSix() {
         ))}
         {testimonials.map(({ img, name, username, text }) => (
           <motion.div
-            className="basis-1/4 shrink-0 h-[200px] rounded-md border-[2px] border-secondaryColor-2 p-6"
+            className="lg:basis-1/4  h-[200px] rounded-md border-[2px] border-secondaryColor-2 p-6"
             variants={variant}
             initial={null}
             animate={inView ? "slide" : null} >

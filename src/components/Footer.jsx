@@ -3,15 +3,15 @@ function Footer() {
   return (
     <>
       <footer className=" bg-secondaryColor-4 ">
-        <section className="py-10 flex justify-evenly ">
-          <div>
+        <section className="py-10  lg:flex justify-around ">
+          <div className="px-4">
             <img src={footer_img} alt="footer_img" width={"100px"} />
-            <p className="w-[30rem]">
+            <p className=" lg:w-[30rem] ">
               Our paper is sourced from FSC-certified mills. We plant enough
               trees to more than double our paper usage.
             </p>
           </div>
-          <div className="capitalize cursor-pointer">
+          <div className="capitalize cursor-pointer px-4">
             <p className="font-semibold text-secondaryColor-2">Company</p>
             <p>about us</p>
             <p>partner program</p>
@@ -19,7 +19,7 @@ function Footer() {
             <p>contact us</p>
             <p>privacy policy</p>
           </div>
-          <div className="capitalize z-0 cursor-pointer">
+          <div className="capitalize z-0 cursor-pointer px-4">
             <p className="text-secondaryColor-4">"" </p>
             <p>pricing </p>
             <p>review </p>

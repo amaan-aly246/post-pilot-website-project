@@ -30,14 +30,14 @@ function SectionFive() {
   }
   return (
     <section className="bg-secondaryColor-3 py-10">
-      <h1 className="text-center text-5xl font-semibold">
+      <h1 className="text-center text-3xl lg:text-5xl font-semibold">
         Fast Launch. Fast results
       </h1>
-      <p className="text-primaryColor-1 font-myFont-Playwrite text-3xl text-center my-6">
+      <p className="text-primaryColor-1 font-myFont-Playwrite text-xl lg:text-3xl text-center my-6">
         Here's how.
       </p>
       {/* container */}
-      <div className=" flex flex-col  ml-20 w-full " ref={container}>
+      <div className=" flex flex-col ml-4 lg:ml-28 w-full " ref={container}>
         {content.map(({ heading, text, id }) => {
           return (
             <details
@@ -47,14 +47,14 @@ function SectionFive() {
                 handleFunc(event)
               }}
               open={openId === id}>
-              <summary className="text-3xl  font-semibold list-none transition-transform ">
+              <summary className="text-xl lg:text-3xl  font-semibold list-none transition-transform ">
                 <span className="font-myFont-Playwrite text-primaryColor-1">
                   {id}
                 </span>
                 <span className="ml-8 ">{heading}</span>
               </summary>
               <motion.div
-                className="w-[23rem] h-[6rem] pl-12 ml-4 text-secondaryColor-2  overflow-auto text-left containerClass"
+                className=" w-[20rem] lg:w-[28rem] h-[6rem] pl-12 ml-4  lg:ml-10 text-secondaryColor-2  overflow-auto text-left containerClass"
                 style={{ direction: "rtl" }}
                 variants={detailsVariant}
                 initial="closed"

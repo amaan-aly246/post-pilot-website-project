@@ -4,7 +4,7 @@ import {
 function SectionOne() {
   return (
     <section className="my-14">
-      <div className="font-semibold text-5xl text-center">
+      <div className="font-semibold text-3xl lg:text-5xl text-center">
         <p>Trusted by thousands</p>
         <p>
           of the top DTC{" "}
@@ -15,10 +15,10 @@ function SectionOne() {
       </div>
 
       {/* company images  */}
-      <div className="flex  gap-8 mt-10 mx-4 ">
+      <div className="flex  gap-8 mt-10 mx-4  flex-wrap ">
         {companies.map(({ company, companyName }) => {
           return (
-            <div className="mx-auto">
+            <div className="mx-auto ">
               <img src={company} alt={company} />
               <img
                 src={companyName}

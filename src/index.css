@@ -3,7 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
 
 .containerClass::-webkit-scrollbar{
     width: .2vw;
@@ -15,9 +20,7 @@
 .containerClass::-webkit-scrollbar-track{
    @apply bg-primaryColor-1
 }
-html{
-    overflow-x: hidden;
-}
+
 
 html::-webkit-scrollbar{
     width: 1vw;

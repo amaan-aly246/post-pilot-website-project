@@ -28,7 +28,7 @@ function SectionTwo() {
   }, [spanInView])
 
   return (
-    <section className="bg-primaryColor-1.2 py-10 text-center p-8 px-10 text-5xl font-semibold">
+    <section className="bg-primaryColor-1.2 text-center p-8 text-3xl lg:text-5xl font-semibold">
       {/* text area  */}
       <div className="pt-8">
         <p className="mb-4">Why use direct mail?</p>
@@ -46,10 +46,10 @@ function SectionTwo() {
         <div>
           <motion.span className="font-semibold text-5xl ">{value}</motion.span>{" "}
           <span className="-ml-2">X</span>
-          <p className="text-xl font-normal">
-            Higher response rate than email{" "}
-            <span className="font-myFont-Playwrite text-primaryColor-1">&</span>{" "}
-            digital{" "}
+          <p className=" text-sm lg:text-xl font-normal">
+            Higher response rate than email
+            <span className="font-myFont-Playwrite text-primaryColor-1">&</span>
+            digital
           </p>
         </div>
         <div>
@@ -60,7 +60,7 @@ function SectionTwo() {
         <div>
           <motion.span className="mr-2">{days}</motion.span>
           <span>Days</span>
-          <p className="text-xl font-normal">
+          <p className="text-sm lg:text-xl font-normal">
             Lifespan of postcard vs seconds for email or SMS.{" "}
           </p>
         </div>

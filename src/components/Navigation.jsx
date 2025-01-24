@@ -6,7 +6,7 @@ function Navigation() {
   return (
     <>
       <nav className="flex justify-between p-2 m-2">
-        {/* logo  */}
+        
         <p className=""><img src={logo} alt="logo" /></p>
         {/* nav links */}
         <div className="capitalize flex gap-3 items-center text-xl -z-0 font-sans font-medium">

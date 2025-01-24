@@ -6,25 +6,25 @@ import { motion } from "framer-motion"
 function Header() {
   return (
     <>
-      <header className="bg-primaryColor-1.2 flex  pt-10">
+      <header className="bg-primaryColor-1.2 flex-row lg:flex  pt-10">
         {/* text area */}
-        <section className="basis-3/5  p-10 py-16">
-          <div className="text-6xl font-semibold">
-            <p>Meet your</p>
-            <p>
+        <section className="basis-3/5   p-10  relative z-20">
+          <div className=" text-3xl lg:text-6xl font-semibold ">
+            <p className="lg:p-4">Meet your</p>
+            <p className="lg:p-6">
               <span className=" text-primaryColor-1 font-myFont-Playwrite">
                 favorite
               </span>{" "}
               new (old)
             </p>
-            <p>marketing channel.</p>
+            <p  className="h-full py-5">marketing channel.</p>
           </div>
 
-          <div className="my-6 text-2xl">
+          <div className="my-6 text-xl lg:text-2xl">
             <p>Remarkable results. Easier than email. Postcard marketing </p>
             <p>reinvented for modern ecommerce.</p>
           </div>
-          <div className="relative z-0 my-4 flex gap-6">
+          <div className="relative py-1 my-4 flex gap-6">
             <motion.button className=" text-white z-30 border-[2px] p-2 px-4 border-black rounded-md  bg-orange uppercase"
             variants={btnVariant}
             initial={null}
@@ -49,18 +49,18 @@ function Header() {
           </div>
         </section>
         {/* images area  */}
-        <section className="basis-2/5  relative ">
+        <section className="basis-2/5 lg:h-[550px] lg:relative absolute -top-[1em] blur-sm lg:blur-0 right-2  ">
           <img
             src={header_img1}
             alt="header_img1"
-            className="absolute h-full right-4 z-10"
+            className="absolute h-full lg:right-4 z-10"
             width={450}
           />
           <img
             src={header_img2}
             alt="header_img2"
             width={450}
-            className="absolute -right-0 z-0"
+            className=" lg:absolute lg:-right-0  z-0"
           />
         </section>
       </header>
